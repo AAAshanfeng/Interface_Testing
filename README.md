@@ -16,3 +16,27 @@
 ├── test_auth.py # 接口鉴权测试用例（3条）
 ├── report.html # pytest自动生成的测试报告
 └── README.md
+
+## Apifox 手工测试
+
+使用Apifox完成了接口调试和手工测试，涵盖以下操作：
+- 请求发送（GET/POST/PUT/DELETE）
+- 环境变量配置
+- 接口关联（登录成功后自动提取token，供后续接口使用）
+- 断言编写（状态码校验、响应字段校验）
+- 批量执行测试用例集
+
+
+## 运行方式
+
+```bash
+# 安装依赖
+pip install requests pytest pytest-html
+
+# 运行全部测试并生成报告
+pytest test_login.py test_products.py test_auth.py -v --html=report.html
+```
+
+## 测试结果
+
+12条测试用例，全部通过。
